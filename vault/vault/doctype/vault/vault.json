@@ -1,0 +1,209 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:title",
+ "creation": "2024-08-31 10:39:07.562160",
+ "default_view": "List",
+ "doctype": "DocType",
+ "documentation": "https://github.com/nilpatel42/vault",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "home_tab",
+  "column_break_rlrd",
+  "title",
+  "username",
+  "password",
+  "password_strength",
+  "generate_strong_password",
+  "ensure_strong_password",
+  "create_new_password",
+  "column_break_6",
+  "url",
+  "valid_url",
+  "quick_navigate",
+  "credentials_owner",
+  "change_ownership",
+  "column_break_iyeq",
+  "category",
+  "secure_note",
+  "help_section",
+  "help_text",
+  "authorized_users_tab",
+  "authorized_users_list"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "ensure_strong_password",
+   "fieldtype": "Check",
+   "label": "Ensure Strong Password"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Username",
+   "reqd": 1
+  },
+  {
+   "fieldname": "generate_strong_password",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Generate Strong Password"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "allow_on_submit": 1,
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "in_list_view": 1,
+   "label": "Password",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "password_strength",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Password Strength"
+  },
+  {
+   "fieldname": "create_new_password",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Change Password"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "default": "https://",
+   "fieldname": "url",
+   "fieldtype": "Data",
+   "label": "Url",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "valid_url",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Valid Url"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "credentials_owner",
+   "fieldtype": "Link",
+   "label": "Credentials Owner",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "change_ownership",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Change Ownership"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "help_section",
+   "fieldtype": "Section Break",
+   "label": "Help"
+  },
+  {
+   "fieldname": "help_text",
+   "fieldtype": "HTML",
+   "label": "Help Text",
+   "options": "<ul>\n<li><b>Create Strong Password</b> button will allow user to create a new strong password and update to the document, If the session user have the the existing password.</li> \n<li><b>Change Ownership</b> button will allow Credential Owner to change the Credential Ownership.</li> \n<li><b>Show Password</b> button will allow user to get the password in the document, If the session user is in the user list or Administrator or Credential Owner. Get My Password button will copy the password to clipboard.</li> \n</ul>\n\n<p><b>Note :</b> Actions are allowed for the Authorized Users, Credential Owner and Administrator.\n</p>\n\n<p>For more details see <a href=\"https://github.com/nilpatel42/vault\">Documentations</a></p>"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "Vault Category"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "authorized_users_list",
+   "fieldtype": "Table",
+   "label": "Authorized Users List",
+   "options": "Vault User"
+  },
+  {
+   "depends_on": "valid_url",
+   "fieldname": "quick_navigate",
+   "fieldtype": "Button",
+   "label": "Quick Navigate"
+  },
+  {
+   "fieldname": "secure_note",
+   "fieldtype": "Small Text",
+   "label": "Secure Note"
+  },
+  {
+   "fieldname": "column_break_rlrd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "home_tab",
+   "fieldtype": "Tab Break",
+   "label": "Home"
+  },
+  {
+   "fieldname": "authorized_users_tab",
+   "fieldtype": "Tab Break",
+   "label": "Authorized Users"
+  },
+  {
+   "fieldname": "column_break_iyeq",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "hide_toolbar": 1,
+ "links": [],
+ "modified": "2024-09-01 18:56:54.387072",
+ "modified_by": "Administrator",
+ "module": "Vault",
+ "name": "Vault",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "All"
+  }
+ ],
+ "quick_entry": 1,
+ "search_fields": "category",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
