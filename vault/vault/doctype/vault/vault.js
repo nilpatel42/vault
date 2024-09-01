@@ -324,6 +324,11 @@ var check_user_exist_in_list = function(frm) {
 
 frappe.ui.form.on('Vault', {
     refresh(frm) {
+        // Check if the document is new
+        if (frm.is_new()) {
+            return;
+        }
+        
         const user = frappe.session.user;
         const isAuthorizedUser = frm.doc.authorized_users_list && frm.doc.authorized_users_list.some(userEntry => userEntry.user === user);
         
@@ -333,16 +338,6 @@ frappe.ui.form.on('Vault', {
     }
 });
 
-frappe.ui.form.on('Vault', {
-    refresh: function (frm) {
-        // Check if the form is in bulk edit mode
-        if (frm.is_new()) return;
 
-        if (frm.bulk_edit) {
-            frm.fields_dict['password'].df.read_only = true;
-            frm.refresh_field('password');
-        }
-    }
-});
 
 
