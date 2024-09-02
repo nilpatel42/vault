@@ -124,7 +124,6 @@
    "allow_in_quick_entry": 1,
    "fieldname": "title",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Title",
    "reqd": 1,
    "unique": 1
@@ -173,9 +172,10 @@
    "fieldtype": "Column Break"
   }
  ],
+ "force_re_route_to_default_view": 1,
  "hide_toolbar": 1,
  "links": [],
- "modified": "2024-09-01 18:56:54.387072",
+ "modified": "2024-09-02 10:08:24.516610",
  "modified_by": "Administrator",
  "module": "Vault",
  "name": "Vault",
@@ -202,8 +202,8 @@
  ],
  "quick_entry": 1,
  "search_fields": "category",
- "sort_field": "modified",
- "sort_order": "DESC",
+ "sort_field": "title",
+ "sort_order": "ASC",
  "states": [],
  "track_changes": 1
 }
